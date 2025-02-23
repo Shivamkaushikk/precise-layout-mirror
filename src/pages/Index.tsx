@@ -15,14 +15,14 @@ const SafePathAI = () => {
       transition: {
         duration: 0.6,
         repeat: Infinity,
-        repeatType: "reverse",
+        repeatType: "mirror" as const,
         ease: "easeInOut",
       },
     },
   };
 
   return (
-    <div className="min-h-screen bg-mint-light flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden">
+    <div className="min-h-screen bg-mint-light flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden md:overflow-auto">
       {/* Main Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -37,13 +37,14 @@ const SafePathAI = () => {
           transition={{ delay: 0.3 }}
           className="mb-12 relative"
         >
-          <div className="absolute right-0 top-0 transform translate-x-4 -translate-y-2">
-            <svg width="40" height="40" className="text-mint-dark">
+          <div className="absolute -right-4 -top-2 w-full">
+            <svg width="100%" height="60" className="text-mint-dark">
               <motion.path
-                d="M2 35 Q 20 5, 38 20"
+                d="M2 45 Q 200 5, 398 30"
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
+                strokeDasharray="8,8"
                 fill="none"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
