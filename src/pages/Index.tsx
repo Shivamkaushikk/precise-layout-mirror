@@ -7,7 +7,6 @@ const SafePathAI = () => {
   const [location, setLocation] = useState("");
   const [destination, setDestination] = useState("");
 
-  // Define the shake animation
   const shakeAnimation = {
     initial: { x: 0 },
     animate: {
@@ -22,22 +21,27 @@ const SafePathAI = () => {
   };
 
   return (
-    <div className="min-h-screen bg-mint-light flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden md:overflow-auto">
-      {/* Main Content */}
+    <div className="min-h-screen bg-mint-light flex flex-col items-center justify-center px-4 relative overflow-hidden md:overflow-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="w-full max-w-md bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl relative z-10"
       >
-        {/* Header Quote */}
+        {/* Stylish Upper Line */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="mb-12"
+          className="relative mb-8"
         >
-          <h1 className="text-2xl font-medium text-mint-dark leading-tight">
+          <motion.div 
+            className="absolute -top-2 left-0 w-full h-1 bg-gradient-to-r from-mint/20 via-mint-dark to-mint/20"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          />
+          <h1 className="text-2xl font-medium text-mint-dark leading-tight pt-4">
             "No more fear,
             <br />
             just safe path
@@ -47,7 +51,7 @@ const SafePathAI = () => {
         </motion.div>
 
         {/* Input Fields */}
-        <div className="space-y-4 mb-8">
+        <div className="space-y-4">
           <motion.div
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -88,15 +92,15 @@ const SafePathAI = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="mt-12"
+          className="mt-8 flex flex-col items-center"
         >
-          <div className="bg-mint-light/50 rounded-xl p-4 mb-2 relative">
-            <div className="absolute w-4 h-4 bg-mint-light/50 transform rotate-45 -bottom-2 left-8" />
+          <div className="bg-mint-light/50 rounded-xl p-4 mb-2 relative w-full">
+            <div className="absolute w-4 h-4 bg-mint-light/50 transform rotate-45 -bottom-2 left-1/2 -ml-2" />
             <p className="text-mint-dark text-sm leading-relaxed">
               Hello! I'm your AI assistant, guiding you through the safest and fastest routes. Your safety is our priority- let's navigate with confidence!
             </p>
           </div>
-          <p className="text-mint-dark/80 text-sm font-medium ml-4">SafePath AI</p>
+          <p className="text-mint-dark/80 text-sm font-medium">SafePath AI</p>
         </motion.div>
       </motion.div>
     </div>
