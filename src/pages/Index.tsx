@@ -35,23 +35,8 @@ const SafePathAI = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="mb-12 relative"
+          className="mb-12"
         >
-          <div className="absolute -right-4 -top-2 w-full">
-            <svg width="100%" height="60" className="text-mint-dark">
-              <motion.path
-                d="M2 45 Q 200 5, 398 30"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeDasharray="8,8"
-                fill="none"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 1, delay: 0.5 }}
-              />
-            </svg>
-          </div>
           <h1 className="text-2xl font-medium text-mint-dark leading-tight">
             "No more fear,
             <br />
@@ -98,27 +83,20 @@ const SafePathAI = () => {
           </motion.div>
         </div>
 
-        {/* AI Assistant Section */}
+        {/* AI Assistant Message */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="flex items-end gap-4 mt-12"
+          className="mt-12"
         >
-          <div className="flex-1">
-            <div className="bg-mint-light/50 rounded-xl p-4 mb-2 relative">
-              <div className="absolute w-4 h-4 bg-mint-light/50 transform rotate-45 -bottom-2 left-8" />
-              <p className="text-mint-dark text-sm leading-relaxed">
-                Hello! I'm your AI assistant, guiding you through the safest and fastest routes. Your safety is our priority- let's navigate with confidence!
-              </p>
-            </div>
-            <p className="text-mint-dark/80 text-sm font-medium ml-4">SafePath AI</p>
+          <div className="bg-mint-light/50 rounded-xl p-4 mb-2 relative">
+            <div className="absolute w-4 h-4 bg-mint-light/50 transform rotate-45 -bottom-2 left-8" />
+            <p className="text-mint-dark text-sm leading-relaxed">
+              Hello! I'm your AI assistant, guiding you through the safest and fastest routes. Your safety is our priority- let's navigate with confidence!
+            </p>
           </div>
-          <motion.img
-            src="/lovable-uploads/b273e24b-d12a-49d0-a52b-8e19965714f8.png"
-            alt="AI Assistant"
-            className="w-20 h-20 object-contain animate-float"
-          />
+          <p className="text-mint-dark/80 text-sm font-medium ml-4">SafePath AI</p>
         </motion.div>
       </motion.div>
     </div>
