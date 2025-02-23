@@ -7,11 +7,22 @@ const SafePathAI = () => {
   const [location, setLocation] = useState("");
   const [destination, setDestination] = useState("");
 
+  // Define the shake animation
+  const shakeAnimation = {
+    initial: { x: 0 },
+    animate: {
+      x: [0, -5, 5, -5, 5, 0],
+      transition: {
+        duration: 0.6,
+        repeat: Infinity,
+        repeatType: "reverse",
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen bg-mint-light flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(#7CC9A5_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
-
       {/* Main Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -27,9 +38,9 @@ const SafePathAI = () => {
           className="mb-12 relative"
         >
           <div className="absolute right-0 top-0 transform translate-x-4 -translate-y-2">
-            <svg width="24" height="24" className="text-mint-dark">
+            <svg width="40" height="40" className="text-mint-dark">
               <motion.path
-                d="M2 20 L22 4"
+                d="M2 35 Q 20 5, 38 20"
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
@@ -54,7 +65,8 @@ const SafePathAI = () => {
           <motion.div
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.4 }}
+            whileHover="animate"
+            variants={shakeAnimation}
             className="relative"
           >
             <input
@@ -70,7 +82,8 @@ const SafePathAI = () => {
           <motion.div
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            whileHover="animate"
+            variants={shakeAnimation}
             className="relative"
           >
             <input
